@@ -12,7 +12,6 @@ def linear_regression_closed_form(X, y):
         for j in range(rows):
             new.append(X[j][i])
         t.append(new)
-    t2 = [list(rows) for rows in zip(*t)]
         
     result = np.linalg.inv(np.dot(t, X )).dot(t).dot(y)
     return result
