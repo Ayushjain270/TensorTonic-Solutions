@@ -9,11 +9,9 @@ def lstm_cell(x_t: np.ndarray, h_prev: np.ndarray, C_prev: np.ndarray,
     """Complete LSTM cell forward pass."""
     def sigmoid(x):
         return 1/(1+ np.exp(-x))
-
     combine = np.concatenate((h_prev , x_t), axis = -1)
-    z_f = combine @ W_f.T + b_f
-    f_t = sigmoid(z_f)
-
+    
+    f_t = sigmoid(combine @ W_f.T + b_f)
     i_t= sigmoid(combine @W_i.T + b_i)
     c_tilde = np.tanh(combine@ W_c.T + b_c)
     o_t = sigmoid(combine @ W_o.T + b_o)
