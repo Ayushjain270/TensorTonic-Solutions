@@ -11,5 +11,5 @@ def forget_gate(h_prev: np.ndarray, x_t: np.ndarray,
     combined = np.concatenate((h_prev , x_t) , axis =-1)
 
     z = combined @ W_f.T + b_f
-    ans = sigmoid(z)
-    return ans 
+    
+    return sigmoid(z) 
