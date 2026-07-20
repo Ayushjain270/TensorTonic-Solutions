@@ -1,5 +1,4 @@
 import numpy as np
-
 def mean_squared_error(y_pred, y_true):
     """
     Returns: float MSE
@@ -10,4 +9,3 @@ def mean_squared_error(y_pred, y_true):
         sum = sum + error
     mean = sum/len(y_pred)
     return mean  
-        
